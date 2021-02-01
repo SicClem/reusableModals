@@ -1,0 +1,8 @@
+<div>
+  <h1>Title</h1>
+  <ng-container [ngSwitch]="modalType">
+    <app-new-user-form *ngSwitchCase="'user'" [events]="eventsSubject" (dataO)="logEvent($event)"></app-new-user-form>
+    <app-new-company-form *ngSwitchCase="'company'" [events]="eventsSubject"></app-new-company-form>
+  </ng-container>
+  <button (click)="emitData()">emit</button>
+</div>
